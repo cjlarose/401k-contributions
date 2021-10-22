@@ -1,11 +1,11 @@
 require 'bigdecimal'
 
-REMAINING_PAY_PERIODS = 13
 MAX_ANNUAL_EMPLOYEE_CONTRIBUTION = BigDecimal '19500.00'
 
-annual_gross_salary = BigDecimal ARGV[0]
-elective_deferral_ytd = BigDecimal ARGV[1]
-elective_deferral_percentage = BigDecimal(ARGV[2]) / 100
+remaining_pay_periods = Integer ARGV[0]
+annual_gross_salary = BigDecimal ARGV[1]
+elective_deferral_ytd = BigDecimal ARGV[2]
+elective_deferral_percentage = BigDecimal(ARGV[3]) / 100
 
 def simulate_pay_period(params)
   annual_gross_salary = params[:annual_gross_salary]
@@ -44,6 +44,6 @@ start = {
   elective_deferral_ytd: elective_deferral_ytd,
   elective_deferral_percentage: elective_deferral_percentage,
 }
-REMAINING_PAY_PERIODS.times.reduce start do |current|
+remaining_pay_periods.times.reduce start do |current|
   simulate_pay_period current
 end
