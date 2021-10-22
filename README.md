@@ -1,5 +1,9 @@
 # 401k contribution calculator
 
+Assumes your employer contributes 50% of your contribution up to your contribution of 6% of your gross annual salary.
+
+Assumes the maximum annual employee contribution is $19,500.
+
 Usage:
 
 ```sh
